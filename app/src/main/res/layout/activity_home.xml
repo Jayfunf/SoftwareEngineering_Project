@@ -4,24 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_bg_image"
     tools:context=".Home">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/back_BTN"
+            android:layout_width="76dp"
+            android:layout_height="66dp"
+            android:layout_gravity="left"
+            android:src="@drawable/home_icon" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="top">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:id="@+id/back_BTN"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/mypage_BTN"
+                android:layout_width="62dp"
+                android:layout_height="51dp"
                 android:layout_gravity="right"
-                android:id="@+id/mypage_BTN"/>
+                android:src="@drawable/menu_icon" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,12 +39,13 @@
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:gravity="center" />
-            <Button
+            <ImageButton
                 android:id="@+id/search_BTN"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight="5" />
+                android:layout_weight="5"
+                android:src="@drawable/search_icon"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -46,11 +53,10 @@
             android:layout_gravity="bottom">
             <ImageButton
                 android:id="@+id/chatbot_BTN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:/>
-
+                android:layout_width="131dp"
+                android:layout_height="150dp"
+                android:layout_gravity="right"
+                android:src="@drawable/chatbot_icon"/>
         </LinearLayout>
-
     </FrameLayout>
 </RelativeLayout>
