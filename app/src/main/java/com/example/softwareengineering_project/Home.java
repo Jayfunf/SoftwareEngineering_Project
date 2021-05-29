@@ -16,7 +16,6 @@ import java.lang.reflect.Array;
 public class Home extends AppCompatActivity {
     ImageButton BTN_mypage,BTN_back, BTN_search, BTN_chatbot;
     EditText EditText_main;
-    Array index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
