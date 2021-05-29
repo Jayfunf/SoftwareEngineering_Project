@@ -23,7 +23,11 @@ public class Home extends AppCompatActivity {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         Intent home_intent = new Intent(this, Home.class);
+        Intent search_intent = new Intent(this, search_Activity.class);
+        Intent chat_bot_intent = new Intent(this, Chat_Bot.class);
+
         //EditText_main = (EditText)findViewById(R.id.EditText_main);
         BTN_back = (ImageButton) findViewById(R.id.back_BTN);
         BTN_mypage = (ImageButton) findViewById(R.id.mypage_BTN);
@@ -51,12 +55,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Test_search_BTN",Toast.LENGTH_SHORT).show();
+                startActivity(search_intent);
             }
         });
         BTN_chatbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Test_chatbot_BTN",Toast.LENGTH_SHORT).show();
+                startActivity(chat_bot_intent);
             }
         });
     }
