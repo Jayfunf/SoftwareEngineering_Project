@@ -15,9 +15,8 @@ import java.lang.reflect.Array;
 
 public class search_Activity extends AppCompatActivity {
     EditText search_Text;
-    ImageButton search_Enter_Button;
+    ImageButton search_Enter_Button, search_Home_Button;
     Array index;
-    Intent BTN_intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +25,22 @@ public class search_Activity extends AppCompatActivity {
 
         search_Text = (EditText)findViewById(R.id.editText_search);
         search_Enter_Button = (ImageButton)findViewById(R.id.search_enter_BTN);
+        search_Home_Button = (ImageButton)findViewById(R.id.home_BTN);
+
+        Intent home_intent = new Intent(this, Home.class);
 
         //search_Text.setSelection(search_Text.length()); //커서 위치 설정이라는데 동작안함.
         search_Enter_Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
+            }
+        });
+        search_Home_Button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(home_intent);
+                finish();
             }
         });
         search_Text.setOnKeyListener(new View.OnKeyListener(){
