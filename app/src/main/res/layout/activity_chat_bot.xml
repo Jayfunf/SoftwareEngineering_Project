@@ -5,5 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Chat_Bot">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_page2_background"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/chat_Home_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_2"
+            android:background="#00ff0000"
+            android:layout_marginLeft="10dp"/>
+    </FrameLayout>
 
 </RelativeLayout>
