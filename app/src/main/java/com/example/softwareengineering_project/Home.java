@@ -48,6 +48,7 @@ public class Home extends AppCompatActivity {
         Intent search_intent = new Intent(this, search_Activity.class);
         Intent chat_bot_intent = new Intent(this, Chat_Bot.class);
         Intent cv_intent = new Intent(this, cv_Activity.class);
+        Intent setting_intent = new Intent(this, setting_Activity.class);
 
         BTN_back = (ImageButton) findViewById(R.id.back_BTN);
         BTN_mypage = (ImageButton) findViewById(R.id.mypage_BTN);
@@ -80,6 +81,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Test_search_BTN", Toast.LENGTH_SHORT).show();
+                System.out.println("Test_search_BTN");
                 startActivity(search_intent);
                 finish(); //terminate ex_Activity
             }
@@ -134,7 +136,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Test_setting_BTN", Toast.LENGTH_SHORT).show();
-                startActivity(home_intent);
+                startActivity(setting_intent);
                 finish(); //terminate ex_Activity
             }
         });
