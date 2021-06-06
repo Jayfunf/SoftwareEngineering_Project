@@ -31,11 +31,18 @@ android {
     }*/
     aaptOptions {
         noCompress "tflite"
+        noCompress "lite"
     }
     buildFeatures {
         viewBinding true
         mlModelBinding true
     }
+    repositories {
+        jcenter()
+    }
+}
+repositories {
+    jcenter()
 }
 
 dependencies {
@@ -50,6 +57,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
     implementation project(path: ':opencv')
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -65,4 +73,5 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-task-text:0.1.0'
     implementation 'com.github.jitpack:android-example:1.0.1'
     implementation 'com.rmtheis:tess-two:9.0.0'
+    implementation files('libs/kkma-2.1.jar')
 }
