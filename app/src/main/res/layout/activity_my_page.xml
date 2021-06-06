@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".my_page_Activity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_page2_background">
+        <ImageButton
+            android:id="@+id/mypage_Home_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="#00ff0000"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/test_2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <ImageButton
+                android:id="@+id/test1"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_weight="1" />
+            <ImageButton
+                android:id="@+id/test2"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_weight="1"/>
+            <ImageButton
+                android:id="@+id/test3"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>
