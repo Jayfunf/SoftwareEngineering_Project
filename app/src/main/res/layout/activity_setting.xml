@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".setting_Activity">
+    <FrameLayout
+        android:id="@+id/LL_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_page2_background"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/setting_Home_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_2"
+            android:background="#00ff0000"
+            android:layout_marginLeft="10dp" />
+        <ImageButton
+            android:id="@+id/sound_setting_BTN"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"/>
+        <ImageButton
+            android:id="@+id/normal_BTN"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+</RelativeLayout>
