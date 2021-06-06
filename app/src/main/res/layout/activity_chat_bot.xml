@@ -17,6 +17,12 @@
             android:src="@drawable/test_2"
             android:background="#00ff0000"
             android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="343dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:text="추후 업데이트 예정입니다!"
+            android:textSize="50dp"/>
     </FrameLayout>
 
 </RelativeLayout>
