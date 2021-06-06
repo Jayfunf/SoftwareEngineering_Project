@@ -92,18 +92,18 @@
             <ImageButton
                 android:id="@+id/image_search_BTN"
                 android:layout_weight="1"
-                android:background="#111111"
+                android:background="#00ff0000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/setting_icon"/>
+                android:src="@drawable/image_search_icon"/>
 
             <ImageButton
                 android:id="@+id/store_BTN"
                 android:layout_weight="1"
-                android:background="#523456"
+                android:background="#00ff0000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/setting_icon"/>
+                android:src="@drawable/map_icon"/>
 
             <ImageButton
                 android:id="@+id/setting_BTN"
