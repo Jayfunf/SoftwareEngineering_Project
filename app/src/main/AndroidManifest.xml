@@ -42,7 +42,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoftwareEngineering_Project"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".my_page_Activity"></activity>
+        <activity android:name=".alarm_design"></activity>
+        <activity android:name=".MainActivity_alarm" />
+        <activity android:name=".cabinet_Activity" />
+        <activity android:name=".translate_Activity" />
+        <activity android:name=".result_Activity" />
+        <activity android:name=".regi_Activity" />
+        <activity android:name=".my_page_Activity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -70,6 +76,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.alraby.alam" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
