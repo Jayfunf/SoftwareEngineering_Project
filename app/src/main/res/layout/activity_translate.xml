@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".translate_Activity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_page2_background">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="60dp"
+            android:text="번역 with    파파고!"
+            android:textSize="70dp"/>
+
+        <EditText
+            android:id="@+id/ET_trans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="번역을 원하는 문장을 입력하세요!"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/trans_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:hint="번역을 완료하면 여기에 표시됩니다!" />
+
+        <ImageButton
+            android:id="@+id/setting_Home_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_2"
+            android:background="#00ff0000"
+            android:layout_marginLeft="10dp" />
+
+        <Button
+            android:id="@+id/trans_BTN"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="165dp"
+            android:text="Go!"/>
+    </FrameLayout>
+
+</RelativeLayout>

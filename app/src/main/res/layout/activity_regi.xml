@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".regi_Activity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_page2_background">
+        <EditText
+            android:id="@+id/EditText_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:hint="이메일"
+            android:textSize="30dp"
+            android:layout_marginBottom="140dp"/>
+        <EditText
+            android:id="@+id/EditText_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:hint="아이디"
+            android:textSize="30dp"
+            android:layout_marginBottom="70dp"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/EditText_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:hint="비밀번호"
+            android:textSize="30dp"
+            android:inputType="textPassword"/>
+
+        <ImageButton
+            android:id="@+id/resi_Enter_BTN"
+            android:layout_width="151dp"
+            android:layout_height="129dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="270dp"
+            android:layout_marginBottom="50dp"/>
+        <ImageButton
+            android:id="@+id/regi_home_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_2"
+            android:background="#00ff0000"/>
+    </FrameLayout>
+
+</RelativeLayout>
