@@ -1,0 +1,31 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=9B:96:51:B1:26:EB:6E:42:2C:55:88:9E:07:DF:BC:68:E6:E5:B2:15%3Bcom.example.softwareengineering_project
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.example.softwareengineering_project
+
+    SHA-1 certificate fingerprint:
+    9B:96:51:B1:26:EB:6E:42:2C:55:88:9E:07:DF:BC:68:E6:E5:B2:15
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD4HoZKnnig9-NN8sETExhkzbG7K85Z0ZE</string>
+    <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.currentplacedetailsonmap.MapsActivityCurrentPlace" /> -->
+</resources>
