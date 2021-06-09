@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.voice.VoiceInteractionSession;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,11 +32,21 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Home extends AppCompatActivity {
 
     public static final int MULTIPLE_PERMISSIONS = 1801;
     private String[] permissions = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION};
+
+    public static boolean alarm_test = false;
+    public static int test, test1;
+
+    Calendar c = Calendar.getInstance();
+
+    int minmin  = c.get(Calendar.MINUTE);
+    int secsec = c.get(Calendar.SECOND);
 
     ImageButton BTN_mypage, BTN_back, BTN_search, BTN_chatbot, BTN_alarm, BTN_cabinet, BTN_translator,
     BTN_setting, BTN_store, BTN_image_search;
@@ -48,6 +59,9 @@ public class Home extends AppCompatActivity {
 
         checkPermissions();
 
+        test = minmin;
+        test1 = secsec;
+
         Intent home_intent = new Intent(this, Home.class);
         Intent search_intent = new Intent(this, search_Activity.class);
         Intent chat_bot_intent = new Intent(this, Chat_Bot.class);
@@ -55,6 +69,10 @@ public class Home extends AppCompatActivity {
         Intent setting_intent = new Intent(this, setting_Activity.class);
         Intent Map_intent = new Intent(this, MapsActivity.class);
         Intent mypage_intent = new Intent(this, my_page_Activity.class);
+        Intent trans_intent = new Intent(this, translate_Activity.class);
+        Intent cabinet_intent = new Intent(this, cabinet_Activity.class);
+        Intent main2_intent = new Intent(this, MainActivity_alarm.class);
+        Intent alarm_intent = new Intent(this, alarm_design.class);
 
         BTN_back = (ImageButton) findViewById(R.id.back_BTN);
         BTN_mypage = (ImageButton) findViewById(R.id.mypage_BTN);
@@ -64,13 +82,13 @@ public class Home extends AppCompatActivity {
         BTN_image_search = (ImageButton) findViewById(R.id.image_search_BTN);
         BTN_cabinet = (ImageButton) findViewById(R.id.cabinet_BTN);
         BTN_translator = (ImageButton) findViewById(R.id.translate_BTN);
-        BTN_setting = (ImageButton) findViewById(R.id.setting_BTN);
+        //BTN_setting = (ImageButton) findViewById(R.id.setting_BTN);
         BTN_store = (ImageButton) findViewById(R.id.store_BTN);
 
         BTN_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_back_BTN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Test_back_BTN", Toast.LENGTH_SHORT).show();
                 startActivity(home_intent);
                 finish();
             }
@@ -79,7 +97,7 @@ public class Home extends AppCompatActivity {
         BTN_mypage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_mypage_BTN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Test_mypage_BTN", Toast.LENGTH_SHORT).show();
                 startActivity(mypage_intent);
                 finish();
             }
@@ -88,8 +106,8 @@ public class Home extends AppCompatActivity {
         BTN_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_search_BTN", Toast.LENGTH_SHORT).show();
-                System.out.println("Test_search_BTN");
+                //Toast.makeText(getApplicationContext(), "Test_search_BTN", Toast.LENGTH_SHORT).show();
+                //System.out.println("Test_search_BTN");
                 startActivity(search_intent);
                 finish();
             }
@@ -97,7 +115,7 @@ public class Home extends AppCompatActivity {
         BTN_chatbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_chatbot_BTN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Test_chatbot_BTN", Toast.LENGTH_SHORT).show();
                 startActivity(chat_bot_intent);
                 finish();
             }
@@ -105,29 +123,31 @@ public class Home extends AppCompatActivity {
         BTN_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "AlarmTest", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "AlarmTest", Toast.LENGTH_SHORT).show();
+                startActivity(main2_intent);
+                finish();
             }
         });
         BTN_cabinet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_cabinet_BTN", Toast.LENGTH_SHORT).show();
-                startActivity(home_intent);
+                //Toast.makeText(getApplicationContext(), "Test_cabinet_BTN", Toast.LENGTH_SHORT).show();
+                startActivity(cabinet_intent);
                 finish();
             }
         });
         BTN_translator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_translator_BTN", Toast.LENGTH_SHORT).show();
-                startActivity(home_intent);
+                //Toast.makeText(getApplicationContext(), "Test_translator_BTN", Toast.LENGTH_SHORT).show();
+                startActivity(trans_intent);
                 finish();
             }
         });
         BTN_store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_store_BTN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Test_store_BTN", Toast.LENGTH_SHORT).show();
                 //startActivity(Map_intent);
                 //finish(); //terminate ex_Activity
                 String url = "http://maps.google.co.kr/maps?q=약국&hl=kor";
@@ -139,20 +159,51 @@ public class Home extends AppCompatActivity {
         BTN_image_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_image_BTN", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Test_image_BTN", Toast.LENGTH_SHORT).show();
                 startActivity(cv_intent);
                 finish(); //terminate ex_Activity
             }
         });
-        BTN_setting.setOnClickListener(new View.OnClickListener() {
+
+        Timer timer = new Timer(true);
+        TimerTask tt = new TimerTask() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Test_setting_BTN", Toast.LENGTH_SHORT).show();
-                startActivity(setting_intent);
-                finish(); //terminate ex_Activity
+            public void run() {
+                if(alarm_test == true){
+                    startActivity(alarm_intent);
+                    alarm_test = false;
+                    timer.cancel();
+                }
             }
-        });
+        };
+        timer.schedule(tt, 0, 1000);
     }
+
+    public static void timealarm(int num){
+        num -= test;
+        System.out.println(num);
+        final int[] teee = {num};
+
+        teee[0] *= 60;
+        teee[0] -= 5;
+        teee[0] -= test1;
+
+        Timer timer = new Timer(true);
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                teee[0] -=1;
+                System.out.println(teee[0]);
+                if(teee[0] == 0){
+                    alarm_test = true;
+                    teee[0] = 0;
+                    timer.cancel();
+                }
+            }
+        };
+        timer.schedule(tt, 0, 1000);
+    }
+
     private boolean checkPermissions() {
         int result;
         List<String> permissionList = new ArrayList<>();
@@ -163,7 +214,6 @@ public class Home extends AppCompatActivity {
                 permissionList.add(pm);
             }
         }
-
         if (!permissionList.isEmpty()) {
             ActivityCompat.requestPermissions(this, permissionList.toArray(new String[permissionList.size()]),
                     MULTIPLE_PERMISSIONS);
