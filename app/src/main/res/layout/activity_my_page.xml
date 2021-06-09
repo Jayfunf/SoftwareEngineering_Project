@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/main_page2_background">
+
         <ImageButton
             android:id="@+id/mypage_Home_BTN"
             android:layout_width="wrap_content"
@@ -17,6 +18,41 @@
             android:background="#00ff0000"
             android:layout_marginLeft="10dp"
             android:src="@drawable/test_2" />
+
+        <EditText
+            android:id="@+id/EditText_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:hint="아이디"
+            android:textSize="30dp"
+            android:layout_marginTop="140dp"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/EditText_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:hint="비밀번호"
+            android:textSize="30dp"
+            android:layout_marginTop="210dp"
+            android:inputType="textPassword"/>
+        <TextView
+            android:id="@+id/TV_my_page_wel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="환영합니다!"
+            android:textSize="50dp"
+            android:layout_marginTop="40dp"/>
+        <TextView
+            android:id="@+id/TV_my_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="50dp"
+            android:layout_marginTop="140dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,17 +61,16 @@
                 android:id="@+id/test1"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:src="@drawable/register_icon"
+                android:background="#00ff0000"/>
             <ImageButton
-                android:id="@+id/test2"
+                android:id="@+id/idpw_Enter_BTN"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
-                android:layout_weight="1"/>
-            <ImageButton
-                android:id="@+id/test3"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/login_icon"
+                android:background="#00ff0000"/>
         </LinearLayout>
     </FrameLayout>
 </RelativeLayout>
